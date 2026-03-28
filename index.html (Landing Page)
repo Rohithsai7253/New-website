@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NearbyMatch - Find Love Nearby</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <span>NearbyMatch</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#testimonials">Success Stories</a></li>
+            </ul>
+            <div class="nav-buttons">
+                <a href="login.html" class="btn btn-outline">Login</a>
+                <a href="signup.html" class="btn btn-primary">Sign Up Free</a>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Find Your <span class="highlight">Perfect Match</span> Nearby</h1>
+            <p>Connect with amazing people in your area. Love might be just around the corner!</p>
+            <div class="hero-buttons">
+                <a href="signup.html" class="btn btn-primary btn-lg">Get Started Free</a>
+                <a href="#how-it-works" class="btn btn-outline btn-lg">Learn More</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <h3>10M+</h3>
+                    <p>Active Users</p>
+                </div>
+                <div class="stat">
+                    <h3>500K+</h3>
+                    <p>Matches Made</p>
+                </div>
+                <div class="stat">
+                    <h3>50K+</h3>
+                    <p>Success Stories</p>
+                </div>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://illustrations.popsy.co/pink/man-and-woman-high-fiving.svg" alt="Couple">
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>Why Choose <span class="highlight">NearbyMatch</span>?</h2>
+            <p>We make finding love simple, safe, and exciting</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Location-Based</h3>
+                <p>Find people near you. Set your distance preference and discover matches in your area.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Safe & Secure</h3>
+                <p>Verified profiles, advanced privacy controls, and 24/7 moderation keep you safe.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Smart Matching</h3>
+                <p>Our algorithm finds compatible matches based on your interests and preferences.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <h3>Real-time Chat</h3>
+                <p>Connect instantly with your matches through our seamless messaging system.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-video"></i>
+                </div>
+                <h3>Video Calls</h3>
+                <p>Get to know your match better with built-in video calling features.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3>Premium Features</h3>
+                <p>Boost your profile, see who liked you, and get unlimited swipes with Premium.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="section-header">
+            <h2>How It <span class="highlight">Works</span></h2>
+            <p>Find your match in 3 simple steps</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <h3>Create Profile</h3>
+                <p>Sign up and create your profile with photos and interests</p>
+            </div>
+            <div class="step-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-icon">
+                    <i class="fas fa-search-location"></i>
+                </div>
+                <h3>Discover</h3>
+                <p>Browse profiles of people nearby and swipe to like</p>
+            </div>
+            <div class="step-arrow">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h3>Match & Chat</h3>
+                <p>When you both like each other, start chatting!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="section-header">
+            <h2>Success <span class="highlight">Stories</span></h2>
+            <p>Real couples who found love on NearbyMatch</p>
+        </div>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+                </div>
+                <p class="testimonial-text">"I never thought I'd find someone so perfect just 2 miles away! We're now engaged!"</p>
+                <h4>Sarah & Mike</h4>
+                <span class="location"><i class="fas fa-map-marker-alt"></i> New York</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="James">
+                </div>
+                <p class="testimonial-text">"Best dating app ever! The location feature helped me find my soulmate in my own neighborhood."</p>
+                <h4>James & Emily</h4>
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Los Angeles</span>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-image">
+                    <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Lisa">
+                </div>
+                <p class="testimonial-text">"We matched, met for coffee the same day, and haven't been apart since. Thank you NearbyMatch!"</p>
+                <h4>Lisa & David</h4>
+                <span class="location"><i class="fas fa-map-marker-alt"></i> Chicago</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Find Your Match?</h2>
+            <p>Join millions of people finding love nearby. It's free to get started!</p>
+            <a href="signup.html" class="btn btn-white btn-lg">Join Now - It's Free!</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                    <span>NearbyMatch</span>
+                </div>
+                <p>Connecting hearts in your neighborhood since 2024.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Press</a></li>
+                    <li><a href="#">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Safety Tips</a></li>
+                    <li><a href="#">Community Guidelines</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 NearbyMatch. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
