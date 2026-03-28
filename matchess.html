@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matches - NearbyMatch</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="matches.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <span>NearbyMatch</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="discover.html" class="nav-item">
+                <i class="fas fa-compass"></i>
+                <span>Discover</span>
+            </a>
+            <a href="matches.html" class="nav-item active">
+                <i class="fas fa-heart"></i>
+                <span>Matches</span>
+                <span class="badge">5</span>
+            </a>
+            <a href="chat.html" class="nav-item">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="premium-card">
+                <i class="fas fa-crown"></i>
+                <h4>Go Premium</h4>
+                <p>Get unlimited likes & more!</p>
+                <button class="btn-premium">Upgrade Now</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1 class="page-title">My Matches</h1>
+            <div class="header-actions">
+                <div class="search-bar small">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search matches..." id="searchMatches">
+                </div>
+            </div>
+        </header>
+
+        <!-- Matches Content -->
+        <div class="matches-content">
+            <!-- New Matches Section -->
+            <section class="matches-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-sparkles"></i> New Matches</h2>
+                    <span class="match-count">8 new</span>
+                </div>
+                <div class="new-matches-slider" id="newMatchesSlider">
+                    <div class="new-match-card" onclick="startChat(1)">
+                        <div class="match-image">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+                            <span class="online-indicator"></span>
+                        </div>
+                        <p class="match-name">Sarah, 24</p>
+                        <span class="match-time">Just now</span>
+                    </div>
+                    <div class="new-match-card" onclick="startChat(2)">
+                        <div class="match-image">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma">
+                        </div>
+                        <p class="match-name">Emma, 26</p>
+                        <span class="match-time">2h ago</span>
+                    </div>
+                    <div class="new-match-card" onclick="startChat(3)">
+                        <div class="match-image">
+                            <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Lisa">
+                            <span class="online-indicator"></span>
+                        </div>
+                        <p class="match-name">Lisa, 23</p>
+                        <span class="match-time">5h ago</span>
+                    </div>
+                    <div class="new-match-card" onclick="startChat(4)">
+                        <div class="match-image">
+                            <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Amy">
+                        </div>
+                        <p class="match-name">Amy, 25</p>
+                        <span class="match-time">1d ago</span>
+                    </div>
+                    <div class="new-match-card" onclick="startChat(5)">
+                        <div class="match-image">
+                            <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="Olivia">
+                            <span class="online-indicator"></span>
+                        </div>
+                        <p class="match-name">Olivia, 27</p>
+                        <span class="match-time">1d ago</span>
+                    </div>
+                    <div class="new-match-card" onclick="startChat(6)">
+                        <div class="match-image">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophia">
+                        </div>
+                        <p class="match-name">Sophia, 24</p>
+                        <span class="match-time">2d ago</span>
+                    </div>
+                    <div class="new-match-card" onclick="startChat(7)">
+                        <div class="match-image">
+                            <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Julia">
+                        </div>
+                        <p class="match-name">Julia, 22</p>
+                        <span class="match-time">3d ago</span>
+                    </div>
+                    <div class="new-match-card" onclick="startChat(8)">
+                        <div class="match-image">
+                            <img src="https://randomuser.me/api/portraits/women/85.jpg" alt="Mia">
+                            <span class="online-indicator"></span>
+                        </div>
+                        <p class="match-name">Mia, 25</p>
+                        <span class="match-time">3d ago</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tabs -->
+            <div class="matches-tabs">
+                <button class="tab-btn active" data-tab="all">All Matches</button>
+                <button class="tab-btn" data-tab="online">Online Now</button>
+                <button class="tab-btn" data-tab="favorites">Favorites</button>
+            </div>
+
+            <!-- All Matches Grid -->
+            <section class="all-matches-grid" id="matchesGrid">
+                <!-- Match Cards -->
+                <div class="match-card" data-online="true" data-favorite="true" data-name="sarah">
+                    <div class="match-card-image">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+                        <span class="online-badge">Online</span>
+                        <button class="favorite-btn active"><i class="fas fa-star"></i></button>
+                    </div>
+                    <div class="match-card-info">
+                        <h3>Sarah <i class="fas fa-check-circle verified"></i></h3>
+                        <p class="match-age-location">24 • 2 km away</p>
+                        <p class="match-bio">Adventure seeker & coffee addict ☕</p>
+                        <div class="match-card-actions">
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-user"></i> Profile</button>
+                            <button class="btn btn-primary btn-sm" onclick="startChat(1)"><i class="fas fa-comment"></i> Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-card" data-online="false" data-favorite="false" data-name="emma">
+                    <div class="match-card-image">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma">
+                        <button class="favorite-btn"><i class="fas fa-star"></i></button>
+                    </div>
+                    <div class="match-card-info">
+                        <h3>Emma <i class="fas fa-check-circle verified"></i></h3>
+                        <p class="match-age-location">26 • 5 km away</p>
+                        <p class="match-bio">Music lover 🎵 Foodie 🍕</p>
+                        <div class="match-card-actions">
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-user"></i> Profile</button>
+                            <button class="btn btn-primary btn-sm" onclick="startChat(2)"><i class="fas fa-comment"></i> Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-card" data-online="true" data-favorite="false" data-name="lisa">
+                    <div class="match-card-image">
+                        <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Lisa">
+                        <span class="online-badge">Online</span>
+                        <button class="favorite-btn"><i class="fas fa-star"></i></button>
+                    </div>
+                    <div class="match-card-info">
+                        <h3>Lisa</h3>
+                        <p class="match-age-location">23 • 3 km away</p>
+                        <p class="match-bio">Yoga enthusiast 🧘‍♀️ Dog mom 🐕</p>
+                        <div class="match-card-actions">
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-user"></i> Profile</button>
+                            <button class="btn btn-primary btn-sm" onclick="startChat(3)"><i class="fas fa-comment"></i> Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-card" data-online="false" data-favorite="true" data-name="amy">
+                    <div class="match-card-image">
+                        <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Amy">
+                        <button class="favorite-btn active"><i class="fas fa-star"></i></button>
+                    </div>
+                    <div class="match-card-info">
+                        <h3>Amy <i class="fas fa-check-circle verified"></i></h3>
+                        <p class="match-age-location">25 • 8 km away</p>
+                        <p class="match-bio">Tech geek & bookworm 📚</p>
+                        <div class="match-card-actions">
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-user"></i> Profile</button>
+                            <button class="btn btn-primary btn-sm" onclick="startChat(4)"><i class="fas fa-comment"></i> Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-card" data-online="true" data-favorite="false" data-name="olivia">
+                    <div class="match-card-image">
+                        <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="Olivia">
+                        <span class="online-badge">Online</span>
+                        <button class="favorite-btn"><i class="fas fa-star"></i></button>
+                    </div>
+                    <div class="match-card-info">
+                        <h3>Olivia <i class="fas fa-check-circle verified"></i></h3>
+                        <p class="match-age-location">27 • 4 km away</p>
+                        <p class="match-bio">Fitness freak 💪 Beach lover 🏖️</p>
+                        <div class="match-card-actions">
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-user"></i> Profile</button>
+                            <button class="btn btn-primary btn-sm" onclick="startChat(5)"><i class="fas fa-comment"></i> Message</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="match-card" data-online="false" data-favorite="false" data-name="sophia">
+                    <div class="match-card-image">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophia">
+                        <button class="favorite-btn"><i class="fas fa-star"></i></button>
+                    </div>
+                    <div class="match-card-info">
+                        <h3>Sophia</h3>
+                        <p class="match-age-location">24 • 6 km away</p>
+                        <p class="match-bio">Artist at heart 🎨 Wine lover 🍷</p>
+                        <div class="match-card-actions">
+                            <button class="btn btn-outline btn-sm"><i class="fas fa-user"></i> Profile</button>
+                            <button class="btn btn-primary btn-sm" onclick="startChat(6)"><i class="fas fa-comment"></i> Message</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+    <script src="matches.js"></script>
+</body>
+</html>
