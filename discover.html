@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover - NearbyMatch</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="discover.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <span>NearbyMatch</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="discover.html" class="nav-item active">
+                <i class="fas fa-compass"></i>
+                <span>Discover</span>
+            </a>
+            <a href="matches.html" class="nav-item">
+                <i class="fas fa-heart"></i>
+                <span>Matches</span>
+                <span class="badge">5</span>
+            </a>
+            <a href="chat.html" class="nav-item">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="premium-card">
+                <i class="fas fa-crown"></i>
+                <h4>Go Premium</h4>
+                <p>Get unlimited likes & more!</p>
+                <button class="btn-premium">Upgrade Now</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <h1 class="page-title">Discover</h1>
+            <div class="header-actions">
+                <button class="filter-btn" id="filterBtn">
+                    <i class="fas fa-sliders-h"></i>
+                    <span>Filters</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Discover Content -->
+        <div class="discover-content">
+            <!-- Swipe Cards Container -->
+            <div class="swipe-container">
+                <div class="cards-wrapper" id="cardsWrapper">
+                    <!-- Cards will be loaded dynamically -->
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="action-buttons">
+                    <button class="action-btn undo" id="undoBtn" title="Undo">
+                        <i class="fas fa-undo"></i>
+                    </button>
+                    <button class="action-btn dislike" id="dislikeBtn" title="Pass">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <button class="action-btn superlike" id="superlikeBtn" title="Super Like">
+                        <i class="fas fa-star"></i>
+                    </button>
+                    <button class="action-btn like" id="likeBtn" title="Like">
+                        <i class="fas fa-heart"></i>
+                    </button>
+                    <button class="action-btn boost" id="boostBtn" title="Boost">
+                        <i class="fas fa-bolt"></i>
+                    </button>
+                </div>
+
+                <!-- Empty State -->
+                <div class="empty-state" id="emptyState" style="display: none;">
+                    <div class="empty-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h2>No more people nearby</h2>
+                    <p>Expand your distance settings or check back later!</p>
+                    <button class="btn btn-primary" onclick="location.reload()">
+                        <i class="fas fa-sync"></i> Refresh
+                    </button>
+                </div>
+            </div>
+
+            <!-- Sidebar Info -->
+            <div class="discover-sidebar">
+                <div class="sidebar-card tips-card">
+                    <h3><i class="fas fa-lightbulb"></i> Quick Tips</h3>
+                    <ul>
+                        <li>Swipe right to like</li>
+                        <li>Swipe left to pass</li>
+                        <li>Tap card to see more</li>
+                        <li>Super like stands out!</li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card stats-card">
+                    <h3><i class="fas fa-chart-bar"></i> Today's Activity</h3>
+                    <div class="mini-stats">
+                        <div class="mini-stat">
+                            <span class="stat-number" id="likesGiven">0</span>
+                            <span class="stat-label">Likes Given</span>
+                        </div>
+                        <div class="mini-stat">
+                            <span class="stat-number" id="passesGiven">0</span>
+                            <span class="stat-label">Passes</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-card premium-teaser">
+                    <div class="premium-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3>See Who Likes You</h3>
+                    <p>Upgrade to Premium to see everyone who liked your profile!</p>
+                    <button class="btn btn-primary btn-block">Upgrade Now</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Match Modal -->
+    <div class="modal" id="matchModal">
+        <div class="modal-content match-modal">
+            <div class="match-animation">
+                <div class="match-hearts">
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h1>It's a Match! 🎉</h1>
+                <p>You and <span id="matchName">Sarah</span> liked each other!</p>
+                <div class="match-avatars">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="You">
+                    <div class="match-heart"><i class="fas fa-heart"></i></div>
+                    <img src="" alt="Match" id="matchAvatar">
+                </div>
+                <div class="match-actions">
+                    <button class="btn btn-primary" onclick="window.location.href='chat.html'">
+                        <i class="fas fa-comment"></i> Send Message
+                    </button>
+                    <button class="btn btn-outline" onclick="closeMatchModal()">
+                        Keep Swiping
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Filter Modal -->
+    <div class="modal" id="filterModal">
+        <div class="modal-content filter-modal">
+            <div class="modal-header">
+                <h2>Discovery Settings</h2>
+                <button class="close-modal" onclick="closeFilterModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="filter-group">
+                    <label>Interested In</label>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="radio" name="filterGender" value="women" checked>
+                            <span>Women</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="filterGender" value="men">
+                            <span>Men</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="filterGender" value="both">
+                            <span>Everyone</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Age Range: <span id="filterAgeText">18 - 35</span></label>
+                    <div class="filter-range">
+                        <input type="range" id="filterMinAge" min="18" max="70" value="18">
+                        <input type="range" id="filterMaxAge" min="18" max="70" value="35">
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label>Maximum Distance: <span id="filterDistanceText">25 km</span></label>
+                    <input type="range" id="filterDistance" min="1" max="100" value="25">
+                </div>
+
+                <div class="filter-group">
+                    <label class="checkbox-filter">
+                        <input type="checkbox" checked>
+                        <span>Only show verified profiles</span>
+                    </label>
+                </div>
+
+                <div class="filter-group">
+                    <label class="checkbox-filter">
+                        <input type="checkbox">
+                        <span>Only show profiles with photos</span>
+                    </label>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" onclick="closeFilterModal()">Cancel</button>
+                <button class="btn btn-primary" onclick="applyFilters()">Apply Filters</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+    <script src="discover.js"></script>
+</body>
+</html>
