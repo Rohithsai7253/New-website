@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - NearbyMatch</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <span>NearbyMatch</span>
+            </div>
+        </div>
+
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item active">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="discover.html" class="nav-item">
+                <i class="fas fa-compass"></i>
+                <span>Discover</span>
+            </a>
+            <a href="matches.html" class="nav-item">
+                <i class="fas fa-heart"></i>
+                <span>Matches</span>
+                <span class="badge">5</span>
+            </a>
+            <a href="chat.html" class="nav-item">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="premium-card">
+                <i class="fas fa-crown"></i>
+                <h4>Go Premium</h4>
+                <p>Get unlimited likes & more!</p>
+                <button class="btn btn-premium">Upgrade Now</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="search-bar">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search matches, messages...">
+            </div>
+
+            <div class="header-actions">
+                <button class="notification-btn">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">4</span>
+                </button>
+                <div class="user-menu">
+                    <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Profile" class="user-avatar">
+                    <div class="user-info">
+                        <span class="user-name">John Doe</span>
+                        <span class="user-status">Online</span>
+                    </div>
+                    <i class="fas fa-chevron-down"></i>
+                    
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu">
+                        <a href="profile.html"><i class="fas fa-user"></i> My Profile</a>
+                        <a href="#"><i class="fas fa-cog"></i> Settings</a>
+                        <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+                        <hr>
+                        <a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-text">
+                    <h1>Welcome back, <span class="highlight">John</span>! 👋</h1>
+                    <p>You have <strong>5 new matches</strong> and <strong>3 unread messages</strong> today.</p>
+                </div>
+                <div class="welcome-actions">
+                    <a href="discover.html" class="btn btn-primary">
+                        <i class="fas fa-compass"></i> Start Discovering
+                    </a>
+                </div>
+            </section>
+
+            <!-- Stats Cards -->
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon pink">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>1,234</h3>
+                        <p>Profile Views</p>
+                        <span class="stat-change positive">+12% this week</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon purple">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>89</h3>
+                        <p>Likes Received</p>
+                        <span class="stat-change positive">+5% this week</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>45</h3>
+                        <p>Total Matches</p>
+                        <span class="stat-change positive">+8% this week</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon green">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>28</h3>
+                        <p>Conversations</p>
+                        <span class="stat-change positive">+3% this week</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Main Grid -->
+            <div class="dashboard-grid">
+                <!-- New Matches -->
+                <section class="dashboard-card matches-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-heart"></i> New Matches</h2>
+                        <a href="matches.html" class="view-all">View All</a>
+                    </div>
+                    <div class="matches-list">
+                        <div class="match-item">
+                            <div class="match-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+                                <span class="online-dot"></span>
+                            </div>
+                            <div class="match-info">
+                                <h4>Sarah, 24</h4>
+                                <p><i class="fas fa-map-marker-alt"></i> 2 km away</p>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Message</button>
+                        </div>
+                        <div class="match-item">
+                            <div class="match-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma">
+                            </div>
+                            <div class="match-info">
+                                <h4>Emma, 26</h4>
+                                <p><i class="fas fa-map-marker-alt"></i> 5 km away</p>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Message</button>
+                        </div>
+                        <div class="match-item">
+                            <div class="match-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Lisa">
+                                <span class="online-dot"></span>
+                            </div>
+                            <div class="match-info">
+                                <h4>Lisa, 23</h4>
+                                <p><i class="fas fa-map-marker-alt"></i> 3 km away</p>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Message</button>
+                        </div>
+                        <div class="match-item">
+                            <div class="match-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Amy">
+                            </div>
+                            <div class="match-info">
+                                <h4>Amy, 25</h4>
+                                <p><i class="fas fa-map-marker-alt"></i> 8 km away</p>
+                            </div>
+                            <button class="btn btn-sm btn-primary">Message</button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Recent Messages -->
+                <section class="dashboard-card messages-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-comments"></i> Recent Messages</h2>
+                        <a href="chat.html" class="view-all">View All</a>
+                    </div>
+                    <div class="messages-list">
+                        <div class="message-item unread">
+                            <div class="message-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+                                <span class="online-dot"></span>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Sarah</h4>
+                                    <span class="message-time">2 min ago</span>
+                                </div>
+                                <p>Hey! I saw we have similar interests. Would love to chat! 😊</p>
+                            </div>
+                        </div>
+                        <div class="message-item unread">
+                            <div class="message-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Emma</h4>
+                                    <span class="message-time">15 min ago</span>
+                                </div>
+                                <p>Thanks for the match! What are you up to this weekend?</p>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Lisa">
+                                <span class="online-dot"></span>
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Lisa</h4>
+                                    <span class="message-time">1 hour ago</span>
+                                </div>
+                                <p>That sounds like a great plan! Let's do it 🎉</p>
+                            </div>
+                        </div>
+                        <div class="message-item">
+                            <div class="message-avatar">
+                                <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Amy">
+                            </div>
+                            <div class="message-content">
+                                <div class="message-header">
+                                    <h4>Amy</h4>
+                                    <span class="message-time">3 hours ago</span>
+                                </div>
+                                <p>Nice to meet you! How long have you been here?</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- People Nearby -->
+                <section class="dashboard-card nearby-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-map-marker-alt"></i> People Nearby</h2>
+                        <a href="discover.html" class="view-all">Explore</a>
+                    </div>
+                    <div class="nearby-grid">
+                        <div class="nearby-person">
+                            <img src="https://randomuser.me/api/portraits/women/90.jpg" alt="Nearby">
+                            <div class="nearby-info">
+                                <h4>Julia, 22</h4>
+                                <span><i class="fas fa-map-marker-alt"></i> 1 km</span>
+                            </div>
+                        </div>
+                        <div class="nearby-person">
+                            <img src="https://randomuser.me/api/portraits/women/85.jpg" alt="Nearby">
+                            <div class="nearby-info">
+                                <h4>Mia, 25</h4>
+                                <span><i class="fas fa-map-marker-alt"></i> 2 km</span>
+                            </div>
+                        </div>
+                        <div class="nearby-person">
+                            <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="Nearby">
+                            <div class="nearby-info">
+                                <h4>Olivia, 24</h4>
+                                <span><i class="fas fa-map-marker-alt"></i> 3 km</span>
+                            </div>
+                        </div>
+                        <div class="nearby-person">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Nearby">
+                            <div class="nearby-info">
+                                <h4>Sophia, 23</h4>
+                                <span><i class="fas fa-map-marker-alt"></i> 4 km</span>
+                            </div>
+                        </div>
+                        <div class="nearby-person">
+                            <img src="https://randomuser.me/api/portraits/women/56.jpg" alt="Nearby">
+                            <div class="nearby-info">
+                                <h4>Ava, 26</h4>
+                                <span><i class="fas fa-map-marker-alt"></i> 5 km</span>
+                            </div>
+                        </div>
+                        <div class="nearby-person">
+                            <img src="https://randomuser.me/api/portraits/women/42.jpg" alt="Nearby">
+                            <div class="nearby-info">
+                                <h4>Chloe, 21</h4>
+                                <span><i class="fas fa-map-marker-alt"></i> 6 km</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Profile Completion -->
+                <section class="dashboard-card profile-completion-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user-check"></i> Complete Your Profile</h2>
+                    </div>
+                    <div class="completion-content">
+                        <div class="completion-circle">
+                            <svg viewBox="0 0 100 100">
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="#e9ecef" stroke-width="8"/>
+                                <circle cx="50" cy="50" r="45" fill="none" stroke="url(#gradient)" stroke-width="8" 
+                                    stroke-dasharray="283" stroke-dashoffset="85" stroke-linecap="round"/>
+                                <defs>
+                                    <linearGradient id="gradient">
+                                        <stop offset="0%" stop-color="#e91e63"/>
+                                        <stop offset="100%" stop-color="#ff6b6b"/>
+                                    </linearGradient>
+                                </defs>
+                            </svg>
+                            <div class="completion-percentage">70%</div>
+                        </div>
+                        <div class="completion-tasks">
+                            <div class="task completed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Add profile photo</span>
+                            </div>
+                            <div class="task completed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Write bio</span>
+                            </div>
+                            <div class="task completed">
+                                <i class="fas fa-check-circle"></i>
+                                <span>Set preferences</span>
+                            </div>
+                            <div class="task">
+                                <i class="fas fa-circle"></i>
+                                <span>Verify your profile</span>
+                            </div>
+                            <div class="task">
+                                <i class="fas fa-circle"></i>
+                                <span>Add more photos</span>
+                            </div>
+                            <div class="task">
+                                <i class="fas fa-circle"></i>
+                                <span>Connect Instagram</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
