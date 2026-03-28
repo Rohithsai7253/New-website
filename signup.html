@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - NearbyMatch</title>
+    <link rel="stylesheet" href="auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Left Side - Image -->
+        <div class="auth-image">
+            <div class="overlay"></div>
+            <div class="image-content">
+                <div class="logo">
+                    <i class="fas fa-heart"></i>
+                    <span>NearbyMatch</span>
+                </div>
+                <h1>Find Your Love</h1>
+                <p>Join millions finding love in their neighborhood</p>
+            </div>
+        </div>
+
+        <!-- Right Side - Form -->
+        <div class="auth-form-container">
+            <div class="auth-form signup-form">
+                <div class="form-header">
+                    <h2>Create Account</h2>
+                    <p>Fill in your details to get started</p>
+                </div>
+
+                <!-- Progress Steps -->
+                <div class="progress-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-circle">1</div>
+                        <span>Basic Info</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-circle">2</div>
+                        <span>Profile</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-circle">3</div>
+                        <span>Preferences</span>
+                    </div>
+                </div>
+
+                <form id="signupForm">
+                    <!-- Step 1: Basic Info -->
+                    <div class="form-step active" id="step1">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <div class="input-group">
+                                    <i class="fas fa-user"></i>
+                                    <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupEmail">Email Address</label>
+                            <div class="input-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="signupEmail" name="email" placeholder="Enter your email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="signupPassword" name="password" placeholder="Create password" required>
+                                <button type="button" class="toggle-password">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                            <div class="password-strength">
+                                <div class="strength-bar"></div>
+                            </div>
+                            <small class="password-hint">Use 8+ characters with mix of letters, numbers & symbols</small>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+                            </div>
+                        </div>
+
+                        <button type="button" class="btn btn-primary btn-block next-step">
+                            <span>Continue</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Step 2: Profile Details -->
+                    <div class="form-step" id="step2">
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <div class="input-group">
+                                <i class="fas fa-calendar"></i>
+                                <input type="date" id="dob" name="dob" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="gender-options">
+                                <label class="gender-option">
+                                    <input type="radio" name="gender" value="male" required>
+                                    <div class="gender-box">
+                                        <i class="fas fa-mars"></i>
+                                        <span>Male</span>
+                                    </div>
+                                </label>
+                                <label class="gender-option">
+                                    <input type="radio" name="gender" value="female">
+                                    <div class="gender-box">
+                                        <i class="fas fa-venus"></i>
+                                        <span>Female</span>
+                                    </div>
+                                </label>
+                                <label class="gender-option">
+                                    <input type="radio" name="gender" value="other">
+                                    <div class="gender-box">
+                                        <i class="fas fa-genderless"></i>
+                                        <span>Other</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <div class="input-group">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <input type="text" id="location" name="location" placeholder="City, Country" required>
+                                <button type="button" class="location-btn" id="getLocation">
+                                    <i class="fas fa-crosshairs"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="bio">About You</label>
+                            <textarea id="bio" name="bio" placeholder="Tell us a bit about yourself..." rows="3"></textarea>
+                            <small class="char-count"><span id="bioCount">0</span>/300</small>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn-outline prev-step">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="button" class="btn btn-primary next-step">
+                                <span>Continue</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Preferences -->
+                    <div class="form-step" id="step3">
+                        <div class="form-group">
+                            <label>I'm interested in</label>
+                            <div class="gender-options">
+                                <label class="gender-option">
+                                    <input type="radio" name="interestedIn" value="men" required>
+                                    <div class="gender-box">
+                                        <i class="fas fa-mars"></i>
+                                        <span>Men</span>
+                                    </div>
+                                </label>
+                                <label class="gender-option">
+                                    <input type="radio" name="interestedIn" value="women">
+                                    <div class="gender-box">
+                                        <i class="fas fa-venus"></i>
+                                        <span>Women</span>
+                                    </div>
+                                </label>
+                                <label class="gender-option">
+                                    <input type="radio" name="interestedIn" value="both">
+                                    <div class="gender-box">
+                                        <i class="fas fa-venus-mars"></i>
+                                        <span>Both</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Age Range</label>
+                            <div class="range-slider">
+                                <div class="range-values">
+                                    <span id="minAgeValue">18</span> - <span id="maxAgeValue">50</span> years
+                                </div>
+                                <div class="range-inputs">
+                                    <input type="range" id="minAge" min="18" max="70" value="18">
+                                    <input type="range" id="maxAge" min="18" max="70" value="50">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Maximum Distance</label>
+                            <div class="distance-slider">
+                                <input type="range" id="distance" min="1" max="100" value="25">
+                                <div class="distance-value"><span id="distanceValue">25</span> km</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Your Interests</label>
+                            <div class="interests-grid">
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="travel">
+                                    <span>✈️ Travel</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="music">
+                                    <span>🎵 Music</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="movies">
+                                    <span>🎬 Movies</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="fitness">
+                                    <span>💪 Fitness</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="food">
+                                    <span>🍕 Food</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="reading">
+                                    <span>📚 Reading</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="gaming">
+                                    <span>🎮 Gaming</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="photography">
+                                    <span>📷 Photography</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="art">
+                                    <span>🎨 Art</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="nature">
+                                    <span>🌿 Nature</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="pets">
+                                    <span>🐕 Pets</span>
+                                </label>
+                                <label class="interest-tag">
+                                    <input type="checkbox" name="interests" value="sports">
+                                    <span>⚽ Sports</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label terms">
+                                <input type="checkbox" name="terms" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                            </label>
+                        </div>
+
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn-outline prev-step">
+                                <i class="fas fa-arrow-left"></i>
+                                <span>Back</span>
+                            </button>
+                            <button type="submit" class="btn btn-primary">
+                                <span>Create Account</span>
+                                <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="divider">
+                    <span>or sign up with</span>
+                </div>
+
+                <div class="social-login">
+                    <button class="social-btn google">
+                        <i class="fab fa-google"></i>
+                        <span>Google</span>
+                    </button>
+                    <button class="social-btn facebook">
+                        <i class="fab fa-facebook-f"></i>
+                        <span>Facebook</span>
+                    </button>
+                </div>
+
+                <div class="form-footer">
+                    <p>Already have an account? <a href="login.html">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+</html>
