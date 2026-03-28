@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages - NearbyMatch</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <i class="fas fa-heart"></i>
+                <span>NearbyMatch</span>
+            </div>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="dashboard.html" class="nav-item">
+                <i class="fas fa-home"></i>
+                <span>Dashboard</span>
+            </a>
+            <a href="discover.html" class="nav-item">
+                <i class="fas fa-compass"></i>
+                <span>Discover</span>
+            </a>
+            <a href="matches.html" class="nav-item">
+                <i class="fas fa-heart"></i>
+                <span>Matches</span>
+                <span class="badge">5</span>
+            </a>
+            <a href="chat.html" class="nav-item active">
+                <i class="fas fa-comments"></i>
+                <span>Messages</span>
+                <span class="badge">3</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </a>
+            <a href="#" class="nav-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </a>
+        </nav>
+        <div class="sidebar-footer">
+            <div class="premium-card">
+                <i class="fas fa-crown"></i>
+                <h4>Go Premium</h4>
+                <p>Get unlimited likes & more!</p>
+                <button class="btn-premium">Upgrade Now</button>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="chat-container">
+            <!-- Conversations List -->
+            <div class="conversations-panel" id="conversationsPanel">
+                <div class="conversations-header">
+                    <h2>Messages</h2>
+                    <button class="new-chat-btn">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                </div>
+
+                <div class="conversations-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search conversations..." id="searchConversations">
+                </div>
+
+                <div class="conversations-list" id="conversationsList">
+                    <!-- Conversation Item 1 -->
+                    <div class="conversation-item active" data-id="1" onclick="selectConversation(1)">
+                        <div class="conversation-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah">
+                            <span class="online-dot"></span>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h4>Sarah</h4>
+                                <span class="conversation-time">2 min</span>
+                            </div>
+                            <p class="conversation-preview">Hey! I saw we have similar interests 😊</p>
+                        </div>
+                        <span class="unread-badge">2</span>
+                    </div>
+
+                    <!-- Conversation Item 2 -->
+                    <div class="conversation-item" data-id="2" onclick="selectConversation(2)">
+                        <div class="conversation-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Emma">
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h4>Emma</h4>
+                                <span class="conversation-time">15 min</span>
+                            </div>
+                            <p class="conversation-preview">Thanks for the match! What are you up to?</p>
+                        </div>
+                        <span class="unread-badge">1</span>
+                    </div>
+
+                    <!-- Conversation Item 3 -->
+                    <div class="conversation-item" data-id="3" onclick="selectConversation(3)">
+                        <div class="conversation-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/33.jpg" alt="Lisa">
+                            <span class="online-dot"></span>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h4>Lisa</h4>
+                                <span class="conversation-time">1 hr</span>
+                            </div>
+                            <p class="conversation-preview">That sounds like a great plan! 🎉</p>
+                        </div>
+                    </div>
+
+                    <!-- Conversation Item 4 -->
+                    <div class="conversation-item" data-id="4" onclick="selectConversation(4)">
+                        <div class="conversation-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/21.jpg" alt="Amy">
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h4>Amy</h4>
+                                <span class="conversation-time">3 hr</span>
+                            </div>
+                            <p class="conversation-preview">Nice to meet you! How's your day?</p>
+                        </div>
+                    </div>
+
+                    <!-- Conversation Item 5 -->
+                    <div class="conversation-item" data-id="5" onclick="selectConversation(5)">
+                        <div class="conversation-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/79.jpg" alt="Olivia">
+                            <span class="online-dot"></span>
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h4>Olivia</h4>
+                                <span class="conversation-time">1 day</span>
+                            </div>
+                            <p class="conversation-preview">We should definitely go hiking sometime!</p>
+                        </div>
+                    </div>
+
+                    <!-- Conversation Item 6 -->
+                    <div class="conversation-item" data-id="6" onclick="selectConversation(6)">
+                        <div class="conversation-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Sophia">
+                        </div>
+                        <div class="conversation-info">
+                            <div class="conversation-header">
+                                <h4>Sophia</h4>
+                                <span class="conversation-time">2 days</span>
+                            </div>
+                            <p class="conversation-preview">I love that art exhibit too! 🎨</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Chat Area -->
+            <div class="chat-area" id="chatArea">
+                <!-- Chat Header -->
+                <div class="chat-header">
+                    <button class="back-btn" id="backBtn">
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <div class="chat-user-info">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" id="chatUserAvatar">
+                        <div>
+                            <h3 id="chatUserName">Sarah</h3>
+                            <span class="user-status" id="chatUserStatus">Online now</span>
+                        </div>
+                    </div>
+                    <div class="chat-actions">
+                        <button class="chat-action-btn" title="Voice Call">
+                            <i class="fas fa-phone"></i>
+                        </button>
+                        <button class="chat-action-btn" title="Video Call">
+                            <i class="fas fa-video"></i>
+                        </button>
+                        <button class="chat-action-btn" title="More Options">
+                            <i class="fas fa-ellipsis-v"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Messages Container -->
+                <div class="messages-container" id="messagesContainer">
+                    <div class="chat-date-divider">
+                        <span>Today</span>
+                    </div>
+
+                    <div class="message received">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="message-avatar">
+                        <div class="message-content">
+                            <p>Hey there! 👋</p>
+                            <span class="message-time">10:30 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="message received">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="message-avatar">
+                        <div class="message-content">
+                            <p>I saw we have similar interests. You're into photography too? 📷</p>
+                            <span class="message-time">10:31 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="message sent">
+                        <div class="message-content">
+                            <p>Hi Sarah! Yes, I love photography! Been doing it for about 3 years now 😊</p>
+                            <span class="message-time">10:35 AM <i class="fas fa-check-double read"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="message received">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="message-avatar">
+                        <div class="message-content">
+                            <p>That's awesome! What kind of photography do you prefer? Landscape? Portrait?</p>
+                            <span class="message-time">10:38 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="message sent">
+                        <div class="message-content">
+                            <p>Mostly street and landscape photography. There's something magical about capturing everyday moments!</p>
+                            <span class="message-time">10:42 AM <i class="fas fa-check-double read"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="message received">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="message-avatar">
+                        <div class="message-content">
+                            <p>I totally agree! We should go on a photo walk sometime. There are some great spots nearby! 🌆</p>
+                            <span class="message-time">10:45 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="message sent">
+                        <div class="message-content">
+                            <p>That sounds like a plan! How about this weekend? ☀️</p>
+                            <span class="message-time">10:48 AM <i class="fas fa-check-double read"></i></span>
+                        </div>
+                    </div>
+
+                    <div class="message received">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="message-avatar">
+                        <div class="message-content">
+                            <p>Saturday works for me! There's a beautiful park near downtown 🌳</p>
+                            <span class="message-time">10:50 AM</span>
+                        </div>
+                    </div>
+
+                    <div class="message received">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="message-avatar">
+                        <div class="message-content">
+                            <p>Hey! I saw we have similar interests. Would love to chat! 😊</p>
+                            <span class="message-time">Just now</span>
+                        </div>
+                    </div>
+
+                    <!-- Typing indicator -->
+                    <div class="typing-indicator" id="typingIndicator" style="display: none;">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah" class="message-avatar">
+                        <div class="typing-dots">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Message Input -->
+                <div class="message-input-container">
+                    <div class="message-input-wrapper">
+                        <button class="input-action-btn emoji-btn" id="emojiBtn">
+                            <i class="fas fa-smile"></i>
+                        </button>
+                        <input type="text" placeholder="Type a message..." id="messageInput">
+                        <button class="input-action-btn attach-btn">
+                            <i class="fas fa-paperclip"></i>
+                        </button>
+                        <button class="input-action-btn image-btn">
+                            <i class="fas fa-image"></i>
+                        </button>
+                    </div>
+                    <button class="send-btn" id="sendBtn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+
+                <!-- Emoji Picker -->
+                <div class="emoji-picker" id="emojiPicker" style="display: none;">
+                    <div class="emoji-grid">
+                        <span class="emoji" data-emoji="😊">😊</span>
+                        <span class="emoji" data-emoji="😍">😍</span>
+                        <span class="emoji" data-emoji="😘">😘</span>
+                        <span class="emoji" data-emoji="🥰">🥰</span>
+                        <span class="emoji" data-emoji="😂">😂</span>
+                        <span class="emoji" data-emoji="❤️">❤️</span>
+                        <span class="emoji" data-emoji="🔥">🔥</span>
+                        <span class="emoji" data-emoji="✨">✨</span>
+                        <span class="emoji" data-emoji="💕">💕</span>
+                        <span class="emoji" data-emoji="😎">😎</span>
+                        <span class="emoji" data-emoji="🤗">🤗</span>
+                        <span class="emoji" data-emoji="😇">😇</span>
+                        <span class="emoji" data-emoji="🙈">🙈</span>
+                        <span class="emoji" data-emoji="💪">💪</span>
+                        <span class="emoji" data-emoji="👋">👋</span>
+                        <span class="emoji" data-emoji="🎉">🎉</span>
+                        <span class="emoji" data-emoji="☕">☕</span>
+                        <span class="emoji" data-emoji="🍕">🍕</span>
+                        <span class="emoji" data-emoji="🌹">🌹</span>
+                        <span class="emoji" data-emoji="💯">💯</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Empty Chat State -->
+            <div class="empty-chat" id="emptyChat" style="display: none;">
+                <div class="empty-chat-content">
+                    <div class="empty-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h2>Select a conversation</h2>
+                    <p>Choose a match from the list to start chatting</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+    <script src="chat.js"></script>
+</body>
+</html>
